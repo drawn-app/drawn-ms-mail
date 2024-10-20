@@ -1,5 +1,3 @@
-#!/usr/bin/env node
-
 import amqp, { Connection, Channel, Message } from "amqplib/callback_api";
 import nodemailer from "nodemailer";
 

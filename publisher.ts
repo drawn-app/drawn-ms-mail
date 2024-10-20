@@ -1,5 +1,3 @@
-#!/usr/bin/env node
-
 import amqp, { Connection, Channel } from "amqplib/callback_api";
 import dotenv from "dotenv";
 dotenv.config();
