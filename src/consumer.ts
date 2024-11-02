@@ -38,7 +38,7 @@ async function sendEmail({ to, subject, body }: EmailData): Promise<void> {
 }
 
 amqp.connect(
-  "amqp://localhost",
+  "amqp://rabbitmq",
   function (error0: Error, connection: Connection) {
     if (error0) {
       throw error0;

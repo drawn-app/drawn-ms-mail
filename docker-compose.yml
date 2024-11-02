@@ -1,0 +1,17 @@
+version: "3.8"
+
+services:
+  ms-mail:
+    image: ms-mail
+    build: .
+    container_name: ms-mail
+    restart: on-failure
+    depends_on:
+      - rabbitmq
+
+  rabbitmq:
+    image: rabbitmq:3.13.7
+    container_name: ms-mail-rabbitmq
+    ports:
+      - "5672:5672"
+      - "8080:15672"
