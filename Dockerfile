@@ -18,6 +18,5 @@ COPY package*.json ./
 RUN npm install --only=production
 
 COPY --from=build /app/dist/ /app/dist/
-COPY --from=build /app/.env /app/
 
 CMD ["npm", "run", "start"]

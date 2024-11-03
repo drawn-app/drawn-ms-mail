@@ -23,7 +23,7 @@ async function sendEmail({ to, subject, body }: EmailData): Promise<void> {
   });
 
   let mailOptions = {
-    from: "laewtae.dental@gmail.com",
+    from: process.env.EMAIL_USER,
     to,
     subject,
     text: body,
@@ -38,7 +38,7 @@ async function sendEmail({ to, subject, body }: EmailData): Promise<void> {
 }
 
 amqp.connect(
-  "amqp://rabbitmq",
+  process.env.RABBITMQ_URL || "amqp://localhost",
   function (error0: Error, connection: Connection) {
     if (error0) {
       throw error0;
